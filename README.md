@@ -39,3 +39,4 @@ date: 2021-06-10
 
 - [Conference wiki](https://github.com/perlconference/tprc-2021-cloud/wiki)
 - [Conference website](https://perlconference.us/tprc-2021-cloud/)
+- [Link to talk on conference schedule](https://tprc2021cic.sched.com/event/jLxl/cross-platform-native-guis-tradepayoffs-integradistribution)
