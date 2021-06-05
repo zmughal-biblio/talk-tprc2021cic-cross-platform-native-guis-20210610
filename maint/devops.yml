@@ -1,0 +1,10 @@
+native:
+  debian:
+    packages:
+      - fonts-firacode
+      - texlive-latex-recommended
+      - texlive-latex-extra
+  macos-homebrew:
+    packages: ~
+  msys2-mingw64:
+    packages: ~

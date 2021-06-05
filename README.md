@@ -33,7 +33,8 @@ date: 2021-06-10
 
 ## Resources
 
-- «TODO»
+- <https://github.com/orbital-transfer-example/perl-gtk3-starter-basic>
+- [List of resources](RESOURCES.md)
 
 ## Conference
 
