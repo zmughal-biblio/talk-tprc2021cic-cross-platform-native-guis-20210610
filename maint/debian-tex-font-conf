@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# See:
+# <https://tex.stackexchange.com/questions/257231/using-the-tex-live-fonts-in-xelatex/257232#257232>
+# <https://github.com/matze/mtheme/issues/280>
+
+curl ftp://tug.org/texlive/Contents/live/texmf-var/fonts/conf/texlive-fontconfig.conf \
+	| sed 's,/home/local/texlive/2021/,/usr/share/texlive/,' \
+	| sudo tee /etc/fonts/conf.d/09-texlive-fonts.conf
+
+sudo fc-cache -fsv

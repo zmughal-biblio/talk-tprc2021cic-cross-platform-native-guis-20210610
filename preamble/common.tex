@@ -1,0 +1,162 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+%
+
+\ifx \printslidenote \undefined
+% no notes
+  \documentclass[ignorenonframetext]{beamer}
+  \usepackage{pgfpages}
+\else
+  \documentclass[ignorenonframetext,handout]{beamer}
+  \usepackage{pgfpages}
+  \pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+  \setbeameroption{show notes on second screen=bottom}
+\fi
+
+
+\setbeamertemplate{note page}[plain] % Beamer manual, section 19.1
+\newlength{\parskipbackup}
+\setlength{\parskipbackup}{\parskip}
+\newlength{\parindentbackup}
+\setlength{\parindentbackup}{\parindent}
+\newcommand{\baselinestretchbackup}{\baselinestretch}
+\usetemplatenote{\rmfamily \scriptsize%
+  \setlength{\parindent}{1em} \setlength{\parskip}{1ex}%
+  \renewcommand{\baselinestretch}{1}%
+  \noindent \insertnote%
+
+  \setlength{\parskip}{\parskipbackup}%
+  \setlength{\parindent}{\parindentbackup}%
+  \renewcommand{\baselinestretch}{\baselinestretchbackup}%
+}
+
+
+
+
+
+\usepackage{tikz}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+
+\usetheme[]{metropolis}
+
+%\usetheme[]{Hannover}
+%\usecolortheme{seahorse}
+
+\setbeamerfont{section title}{size=\Huge}
+\setbeamerfont{subsection title}{size=\huge}
+
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{%
+	pdfpagemode={UseNone},%
+	pdfpagelayout={SinglePage}%
+}
+\hypersetup{
+            colorlinks=true,
+            linkcolor=Maroon,
+            citecolor=Blue,
+            urlcolor=Blue,
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\newif\ifbibliography
+\usepackage{longtable,booktabs}
+\usepackage{caption}
+% These lines are needed to make table captions work with longtable:
+\makeatletter
+\def\fnum@table{\tablename~\thetable}
+\makeatother
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Prevent slide breaks in the middle of a paragraph:
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+\centering
+\begin{beamercolorbox}[sep=16pt,center]{part title}
+  \usebeamerfont{part title}\insertpart\par
+\end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+\centering
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+  \usebeamerfont{section title}\insertsection\par
+\end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{part title}
+  \usebeamerfont{subsection title}\insertsubsection\par
+\end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage[normalem]{ulem}
+% avoid problems with \sout in headers with hyperref:
+\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{listings}
+\lstset{%
+backgroundcolor=\color{black},%
+basicstyle=\small\ttfamily\singlespacing\color{white},%
+commentstyle=\color{purple},%
+keywordstyle=\color{blue!70},%
+stringstyle=\color{green!70}%
+}
+
+\usepackage{multicol}
+\usepackage{qrcode}
