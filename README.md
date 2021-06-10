@@ -27,9 +27,7 @@ date: 2021-06-10
 
 ## Video
 
-«TODO»
-
-[![Talk video](«»)](«»)
+[![Talk video](http://img.youtube.com/vi/En49kYRDbsg/0.jpg)](https://www.youtube.com/watch?v=En49kYRDbsg)
 
 ## Resources
 
